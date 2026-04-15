@@ -1,0 +1,14 @@
+name: Use secret
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      -name: use API working-directory
+      run: echo "API key is $API_KEY"
+      env:
+        API_KEY: ${{secretes.API_KEY}}
+        
